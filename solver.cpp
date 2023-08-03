@@ -28,32 +28,23 @@ int main() {
 	int n;
     cin>>n;
 
-    string ans="";
-    if(n<16){
-        ans+="0";
-        if(n>9){
-            ans+='A'+n-10;
-        }
-        else{
-            ans+=to_string(n);
-        }
+    int x=n/16;
+    int y=n%16;
+
+    if(x<=9){
+        cout<<x;
     }
     else{
-        if(n/16>9){
-            ans+='A'+n/16-10;
-        }
-        else{
-            ans+=to_string(n/16);
-        }
-        n%=16;
-        if(n>9){
-            ans+='A'+n-10;
-        }
-        else{
-            ans+=to_string(n);
-        }
+        cout<<(char)('A'+x-10);
     }
-    cout<<ans<<endl;
-    
+
+    if(y<=9){
+        cout<<y;
+    }
+    else{
+        cout<<(char)('A'+y-10);
+    }
+    cout<<endl;
+
 	return 0;
 }
